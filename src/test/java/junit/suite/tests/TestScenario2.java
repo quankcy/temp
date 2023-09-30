@@ -8,13 +8,13 @@ public class TestScenario2 {
 
 //    @Disabled
     @Test
-    @Tag("Regression")
+//    @Tag("Regression")
     public void ts2_regression(){
         Assertions.assertEquals(1,1);
     }
 
     @Test
-    @Tag("Smoke")
+//    @Tag("Smoke")
     public void ts2_smoke(){
         Assertions.assertEquals(1,1);
     }

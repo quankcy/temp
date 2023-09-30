@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@ExtendWith(SuiteConfigurationExtension.class)
+//@ExtendWith(SuiteConfigurationExtension.class) // the one!
 @Tag("Regression")
 public @interface Regression {
 }

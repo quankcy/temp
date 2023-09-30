@@ -1,5 +1,7 @@
 package junit.suite;
 
+import org.junit.jupiter.api.extension.BeforeAllCallback;
+import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
@@ -10,28 +12,33 @@ import junit.suite.tests.Regression;
 import java.util.Optional;
 
 public class SuiteConfigurationExtension implements
-//        BeforeAllCallback,
-//        BeforeEachCallback,
-        ParameterResolver
+        BeforeAllCallback
+//        ,
+//        BeforeEachCallback
+//        ,ParameterResolver
 {
-//    @Override
-//    public void beforeAll(ExtensionContext extensionContext) throws Exception {
+    @Override
+    public void beforeAll(ExtensionContext extensionContext) throws Exception {
+        Optional<String> optionalStartUrl = extensionContext.getConfigurationParameter(Base.URL);
+        SuiteRunConfiguration.get(optionalStartUrl);
+//        return new SuiteRunConfiguration(optionalStartUrl);
 //        TestRunConfiguration.get(extensionContext.getConfigurationParameter(Dictionary.URL));
+    }
+
+//    @Override
+//    public void beforeEach(ExtensionContext extensionContext) throws Exception {
+//        Optional<String> optionalStartUrl = extensionContext.getConfigurationParameter(Base.URL);
+//        SuiteRunConfiguration.get(optionalStartUrl);
+//    }
+
+//    @Override
+//    public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+//        return parameterContext.isAnnotated(Regression.class);
 //    }
 //
 //    @Override
-//    public void beforeEach(ExtensionContext extensionContext) throws Exception {
-//        TestRunConfiguration.get(extensionContext.getConfigurationParameter(Dictionary.URL));
+//    public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+//        Optional<String> optionalStartUrl = extensionContext.getConfigurationParameter(Base.URL);
+//        return new SuiteRunConfiguration(optionalStartUrl);
 //    }
-
-    @Override
-    public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        return parameterContext.isAnnotated(Regression.class);
-    }
-
-    @Override
-    public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-        Optional<String> optionalStartUrl = extensionContext.getConfigurationParameter(Base.URL);
-        return new SuiteRunConfiguration(optionalStartUrl);
-    }
 }
