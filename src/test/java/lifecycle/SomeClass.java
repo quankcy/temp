@@ -19,8 +19,8 @@ public class SomeClass {
         System.out.println("");
     }
 
-    private static final String STATIC_FINAL_PROPERTY = "static final property value";
-    private static String staticProperty = "static property value";
+    public static final String STATIC_FINAL_PROPERTY = "static final property value";
+    public static String staticProperty = "static property value";
     private String objectProperty = "object property value";
 
     static {

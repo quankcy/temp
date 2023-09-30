@@ -7,6 +7,16 @@ import java.util.Optional;
 public class LifecycleUT {
 
     @Test
+    public void getStaticFinalField() {
+        String staticFinalProperty = SomeClass.STATIC_FINAL_PROPERTY;
+    }
+
+    @Test
+    public void getStaticField() {
+        String staticProperty = SomeClass.staticProperty;
+    }
+
+    @Test
     public void runOnlyStaticMethod() {
         SomeClass.staticMethod();
     }
