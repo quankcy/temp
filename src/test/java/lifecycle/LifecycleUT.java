@@ -57,9 +57,9 @@ public class LifecycleUT {
     @Test
     public void createFewObjectsAndCheckProperties(){
         SomeClass.staticMethod();
-        new SomeClass("some new value");
-        SomeClass.staticMethod();
-        new SomeClass("some another value");
+        SomeClass object1 = new SomeClass("object 1");
+//        SomeClass.staticMethod();
+        SomeClass object2 = new SomeClass("object 2");
         SomeClass.staticMethod();
     }
 
