@@ -61,7 +61,7 @@ public class LifecycleUT {
     @Test
     public void createFewObjects(){
         new SomeClass("some new value");
-        new SomeClass("some another value");
+        new SomeClass(Optional.of("some another value"));
     }
 
     @Test
@@ -72,5 +72,20 @@ public class LifecycleUT {
         SomeClass object2 = new SomeClass("object 2");
         SomeClass.staticMethod();
     }
+
+    @Test
+    public void childParent(){
+        new Child();
+    }
+
+    /*
+    Podusmowanie:
+        1) Zmienne finalne statyczne bez calej reszty
+        2) Bloki statyczne i zmienne statyczne ( nie mylic z final )
+        - konstruktory
+        - statyczne metody
+
+
+     */
 
 }

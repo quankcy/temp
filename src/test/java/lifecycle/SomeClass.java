@@ -14,7 +14,7 @@ public class SomeClass {
     static {
         System.out.println("-------- STATIC: block BEFORE static and object properties");
         same(STATIC_FINAL_STRING, SomeClass.STATIC_FINAL_PROPERTY);
-        same(STATIC_STRING, SomeClass.staticProperty);
+        same(STATIC_STRING, SomeClass.staticProperty); // null
         error(STRING, "CAN'T BE INVOKED FROM STATIC BLOCK!!!");
         System.out.println("");
     }
@@ -26,7 +26,7 @@ public class SomeClass {
     static {
         System.out.println("-------- STATIC: block AFTER static and dynamic properties");
         same(STATIC_FINAL_STRING, SomeClass.STATIC_FINAL_PROPERTY);
-        changed(STATIC_STRING, SomeClass.staticProperty);
+        changed(STATIC_STRING, SomeClass.staticProperty); // static property value
         error(STRING, "CAN'T BE INVOKED FROM STATIC BLOCK!!!");
         System.out.println("");
     }
