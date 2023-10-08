@@ -38,6 +38,12 @@ public class AgataMebleE2E {
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector("#onetrust-accept-btn-handler")))
                 .click();
 
+        /*
+        $$("#js-mainMenu > ul > li:nth-of-type(2)")
+        $$("#js-mainMenu > ul > li > a[href='https://www.agatameble.pl/kuchnia']")
+        $x("//*[@id='js-mainMenu']//a[text()=' Kuchnie i AGD ']")
+         */
+
         System.out.println("asd");
 
         webDriver.quit();
