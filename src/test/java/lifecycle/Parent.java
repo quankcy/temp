@@ -2,7 +2,7 @@ package lifecycle;
 
 public class Parent {
 
-    static{
+    static {
         System.out.println("Parent static");
     }
 
@@ -13,4 +13,5 @@ public class Parent {
     public Parent(String asd) {
         System.out.println("Parent String Arg Constructor");
     }
+
 }
